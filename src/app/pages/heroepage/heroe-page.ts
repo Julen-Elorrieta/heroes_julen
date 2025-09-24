@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
+import { HomePage } from '../homepage/home-page';
+
+
+interface Hero {
+  id: number;
+  name: string;
+  power: string;
+}
 
 @Component({
   selector: 'app-heroe-page',
@@ -9,6 +17,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './heroe-page.html',
   styleUrl: './heroe-page.css'
 })
-export class HeroePage {
 
+export class HeroePage {
+  hero: Hero | undefined;
+
+  constructor(private route: ActivatedRoute) {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.hero = HomePage.heroes.find(h => h.id === id);
+  }
 }

@@ -1,1 +1,8 @@
-<p>heroe-page works!</p>
+<ng-container *ngIf="hero; else notFound">
+    <h2>{{ hero.name }}</h2>
+    <p>ID: {{ hero.id }}</p>
+    <p>Poder: {{ hero.power }}</p>
+</ng-container>
+<ng-template #notFound>
+    <p>Héroe no encontrado.</p>
+</ng-template>

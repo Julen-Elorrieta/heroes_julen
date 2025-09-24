@@ -1,0 +1,28 @@
+
+.top-heroes-container {
+	text-align: center;
+	margin-top: 32px;
+}
+
+.top-heroes-list {
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	margin-top: 16px;
+}
+
+.top-hero-btn {
+	background: #455a64;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 16px 32px;
+	font-size: 1.3rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.top-hero-btn:hover {
+	background: #263238;
+}

@@ -1,5 +1,7 @@
-<ul>
-  <li *ngFor="let hero of heroes">
-    <a [routerLink]="['/hero', hero.id]">{{ hero.name }}</a>
-  </li>
-</ul>
+<div class="top-heroes-container">
+  <ul class="top-heroes-list">
+    <li *ngFor="let hero of heroes">
+      <a class="top-hero-btn" [routerLink]="['/hero', hero.id]">{{ hero.name }}</a>
+    </li>
+  </ul>
+</div>

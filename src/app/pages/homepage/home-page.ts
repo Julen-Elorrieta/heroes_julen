@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   static heroes = [
-    { id: 1, name: 'Superman' },
-    { id: 2, name: 'Batman' },
-    { id: 3, name: 'Wonder Woman' },
-    { id: 4, name: 'Flash' }
+    { id: 1, name: 'Superman', power: 'Superfuerza, vuelo, visión láser' },
+    { id: 2, name: 'Batman', power: 'Inteligencia, artes marciales, tecnología' },
+    { id: 3, name: 'Wonder Woman', power: 'Superfuerza, lazo de la verdad, agilidad' },
+    { id: 4, name: 'Flash', power: 'Supervelocidad' }
   ];
 
   constructor(private router: Router) {}
