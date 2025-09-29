@@ -1,1 +1,60 @@
+/* Paleta y tipografía global */
+:root {
+	--color-primary: #263238;
+	--color-secondary: #455a64;
+	--color-accent: #ff5252;
+	--color-bg: #f5f7fa;
+	--color-surface: #fff;
+	--color-border: #b0bec5;
+	--color-text: #263238;
+	--color-text-light: #fff;
+	--color-muted: #ececec;
+	--font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: var(--font-main);
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-main);
+	font-weight: 700;
+	color: var(--color-primary);
+	margin-top: 0;
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+a:hover {
+	color: var(--color-accent);
+}
+
+button {
+	font-family: var(--font-main);
+	font-size: 1rem;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+
+input, select, textarea {
+	font-family: var(--font-main);
+	font-size: 1rem;
+	border-radius: 4px;
+	border: 1px solid var(--color-border);
+	padding: 8px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
 /* You can add global styles to this file, and also import other style files */
