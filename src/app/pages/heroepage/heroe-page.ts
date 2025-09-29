@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { HomePage } from '../homepage/home-page';
-
-
-interface Hero {
-  id: number;
-  name: string;
-  power: string;
-}
+import { Hero } from '../../hero/hero';
 
 @Component({
   selector: 'app-heroe-page',
@@ -23,6 +17,6 @@ export class HeroePage {
 
   constructor(private route: ActivatedRoute) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.hero = HomePage.heroes.find(h => h.id === id);
+    this.hero = HomePage.allHeroes.find(h => h.id === id);
   }
 }

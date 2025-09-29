@@ -12,4 +12,10 @@ import { HomePage } from '../homepage/home-page';
 })
 export class HeroesPage {
   heroes = HomePage.heroes;
+
+  allHeroes = [...HomePage.allHeroes];
+
+  deleteHero(heroId: number) {
+    this.allHeroes = this.allHeroes.filter(h => h.id !== heroId);
+  }
 }
