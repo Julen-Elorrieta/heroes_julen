@@ -8,13 +8,13 @@ import { Hero, allHeroes } from '../../hero/hero';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './heroe-page.html',
-  styleUrl: './heroe-page.css'
+  styleUrl: './heroe-page.css',
 })
 export class HeroePage {
   hero: Hero | undefined;
 
   constructor(private route: ActivatedRoute) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.hero = allHeroes.find(h => h.id === id);
+    this.hero = allHeroes.find((h) => h.id === id);
   }
 }

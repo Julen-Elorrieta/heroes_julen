@@ -9,7 +9,8 @@
   --color-text: #263238;
   --color-text-light: #fff;
   --color-muted: #ececec;
-  --font-main: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-main: "Segoe UI", "Roboto", -apple-system, BlinkMacSystemFont,
+    sans-serif;
   --shadow-sm: 0 2px 8px rgba(38, 50, 56, 0.1);
   --shadow-md: 0 4px 20px rgba(38, 50, 56, 0.15);
   --shadow-lg: 0 10px 40px rgba(38, 50, 56, 0.2);
@@ -19,7 +20,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -36,7 +38,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-main);
   font-weight: 700;
   color: var(--color-primary);
@@ -45,9 +52,15 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
 
 p {
   margin-bottom: 1rem;
@@ -82,7 +95,9 @@ button:focus {
   outline-offset: 2px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: var(--font-main);
   font-size: 1rem;
   border-radius: 6px;
@@ -93,7 +108,9 @@ input, select, textarea {
   width: 100%;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--color-secondary);
   box-shadow: 0 0 0 3px rgba(69, 90, 100, 0.1);
@@ -115,11 +132,17 @@ router-outlet + * {
     --shadow-md: 0 2px 12px rgba(38, 50, 56, 0.15);
     --shadow-lg: 0 4px 24px rgba(38, 50, 56, 0.2);
   }
-  
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.5rem; }
-  
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+
   router-outlet + * {
     padding: 0.5rem;
   }

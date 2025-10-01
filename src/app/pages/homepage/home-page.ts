@@ -9,10 +9,9 @@ import { allHeroes } from '../../hero/hero';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './home-page.html',
-  styleUrl: './home-page.css'
+  styleUrl: './home-page.css',
 })
 export class HomePage {
-
   topHeroes: Hero[] = allHeroes.slice(0, 4);
 
   constructor(private router: Router) {}

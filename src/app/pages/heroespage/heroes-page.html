@@ -10,8 +10,16 @@
     <ul class="all-heroes-list">
       <li *ngFor="let hero of allHeroes">
         <span class="hero-id">{{ hero.id }}</span>
-        <a class="all-hero-btn" [routerLink]="['/hero', hero.id]">{{ hero.name }}</a>
-        <button class="delete-btn" (click)="deleteHero(hero.id)" title="Eliminar heroe">×</button>
+        <a class="all-hero-btn" [routerLink]="['/hero', hero.id]"
+          >{{ hero.name }}</a
+        >
+        <button
+          class="delete-btn"
+          (click)="deleteHero(hero.id)"
+          title="Eliminar heroe"
+        >
+          ×
+        </button>
       </li>
     </ul>
   </div>
@@ -22,27 +30,29 @@
       <form (ngSubmit)="submitAddHero()" #heroForm="ngForm">
         <label>
           Nombre del Heroe:
-          <input 
-            name="name" 
-            [(ngModel)]="newHeroName" 
-            required 
+          <input
+            name="name"
+            [(ngModel)]="newHeroName"
+            required
             placeholder="Ej: Spider-Man"
             autocomplete="off"
           />
         </label>
         <label>
           Superpoder:
-          <input 
-            name="power" 
-            [(ngModel)]="newHeroPower" 
-            required 
+          <input
+            name="power"
+            [(ngModel)]="newHeroPower"
+            required
             placeholder="Ej: Telarañas y agilidad"
             autocomplete="off"
           />
         </label>
         <div class="modal-actions">
           <button type="button" (click)="closeAddHero()">Cancelar</button>
-          <button type="submit" [disabled]="!newHeroName || !newHeroPower">Crear Heroe</button>
+          <button type="submit" [disabled]="!newHeroName || !newHeroPower">
+            Crear Heroe
+          </button>
         </div>
       </form>
     </div>

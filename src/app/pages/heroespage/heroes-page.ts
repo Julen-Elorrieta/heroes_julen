@@ -9,7 +9,7 @@ import { allHeroes } from '../../hero/hero';
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './heroes-page.html',
-  styleUrl: './heroes-page.css'
+  styleUrl: './heroes-page.css',
 })
 export class HeroesPage {
   allHeroes = [...allHeroes];
@@ -19,12 +19,18 @@ export class HeroesPage {
   newHeroPower = '';
 
   deleteHero(heroId: number) {
-    this.allHeroes = this.allHeroes.filter(h => h.id !== heroId);
+    this.allHeroes = this.allHeroes.filter((h) => h.id !== heroId);
   }
 
   submitAddHero() {
-    const newId = this.allHeroes.length ? Math.max(...this.allHeroes.map(h => h.id)) + 1 : 1;
-    const newHero = { id: newId, name: this.newHeroName, power: this.newHeroPower };
+    const newId = this.allHeroes.length
+      ? Math.max(...this.allHeroes.map((h) => h.id)) + 1
+      : 1;
+    const newHero = {
+      id: newId,
+      name: this.newHeroName,
+      power: this.newHeroPower,
+    };
     this.allHeroes = [...this.allHeroes, newHero];
     this.closeAddHero();
   }
