@@ -18,6 +18,8 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "baseHref": "/",
+            "index": "src/index.html",
             "assets": [
               {
                 "glob": "**/*",
