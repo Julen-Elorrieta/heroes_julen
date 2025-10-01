@@ -1,0 +1,129 @@
+/* HeroePage Styles - Página de detalle del héroe */
+.hero-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(38, 50, 56, 0.1);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-text-light);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+.hero-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-info {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-info p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+}
+
+.hero-id-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-power {
+  background: rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.2);
+  margin-top: 1rem;
+}
+
+.hero-power strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.not-found-container {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.not-found-container h2 {
+  color: var(--color-accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.not-found-container p {
+  color: var(--color-text);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.back-button:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(38, 50, 56, 0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-detail-container {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .hero-card {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-card h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-info p {
+    font-size: 1rem;
+  }
+}

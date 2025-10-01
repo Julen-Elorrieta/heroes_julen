@@ -1,60 +1,126 @@
-/* Paleta y tipografía global */
+/* Heroes App - Global Styles & Variables */
 :root {
-	--color-primary: #263238;
-	--color-secondary: #455a64;
-	--color-accent: #ff5252;
-	--color-bg: #f5f7fa;
-	--color-surface: #fff;
-	--color-border: #b0bec5;
-	--color-text: #263238;
-	--color-text-light: #fff;
-	--color-muted: #ececec;
-	--font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  --color-primary: #263238;
+  --color-secondary: #455a64;
+  --color-accent: #ff5252;
+  --color-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-surface: #fff;
+  --color-border: #b0bec5;
+  --color-text: #263238;
+  --color-text-light: #fff;
+  --color-muted: #ececec;
+  --font-main: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(38, 50, 56, 0.1);
+  --shadow-md: 0 4px 20px rgba(38, 50, 56, 0.15);
+  --shadow-lg: 0 10px 40px rgba(38, 50, 56, 0.2);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background: var(--color-bg);
-	color: var(--color-text);
-	font-family: var(--font-main);
-	font-size: 16px;
-	box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
 }
 
+body {
+  background: var(--color-bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-	font-family: var(--font-main);
-	font-weight: 700;
-	color: var(--color-primary);
-	margin-top: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Links */
 a {
-	color: var(--color-primary);
-	text-decoration: none;
-	transition: color 0.2s;
-}
-a:hover {
-	color: var(--color-accent);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Form Elements */
 button {
-	font-family: var(--font-main);
-	font-size: 1rem;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: background 0.2s, color 0.2s;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+}
+
+button:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
 }
 
 input, select, textarea {
-	font-family: var(--font-main);
-	font-size: 1rem;
-	border-radius: 4px;
-	border: 1px solid var(--color-border);
-	padding: 8px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid var(--color-border);
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
 }
-/* You can add global styles to this file, and also import other style files */
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(69, 90, 100, 0.1);
+}
+
+/* Router Outlet Wrapper */
+router-outlet + * {
+  display: block;
+  min-height: calc(100vh - 2rem);
+  padding: 1rem;
+}
+
+/* Utility Classes - Only used ones kept */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --shadow-sm: 0 1px 4px rgba(38, 50, 56, 0.1);
+    --shadow-md: 0 2px 12px rgba(38, 50, 56, 0.15);
+    --shadow-lg: 0 4px 24px rgba(38, 50, 56, 0.2);
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  
+  router-outlet + * {
+    padding: 0.5rem;
+  }
+}

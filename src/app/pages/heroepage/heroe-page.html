@@ -1,28 +1,23 @@
-<ng-container *ngIf="hero; else notFound">
-    <h2>{{ hero.name }}</h2>
-    <p>ID: {{ hero.id }}</p>
-    <p>Poder: {{ hero.power }}</p>
-</ng-container>
-<ng-template #notFound>
-    <p>Héroe no encontrado.</p>
-</ng-template>
-
-<button (click)="showAddHero = true">Editar Heroe</button>
-
-  <div class="modal-backdrop" *ngIf="showAddHero">
-    <div class="modal">
-      <h3>Editar Héroe</h3>
-      <form>
-        <label>Nombre:
-          <input name="newName" [(ngModel)]="newName" required />
-        </label>
-        <label>Poder:
-          <input name="newPower" [(ngModel)]="newPower" required />
-        </label>
-        <div class="modal-actions">
-          <button type="submit" [disabled]="!newName || !newPower" (click)="editHeroe()">Guardar</button>
-          <button type="button" (click)="closeAddHero()">Cancelar</button>
+<div class="hero-detail-container">
+  <ng-container *ngIf="hero; else notFound">
+    <div class="hero-card">
+      <div class="hero-id-badge">Heroe #{{ hero.id }}</div>
+      <h2>{{ hero.name }}</h2>
+      <div class="hero-info">
+        <div class="hero-power">
+          <strong>Superpoder:</strong>
+          {{ hero.power }}
         </div>
-      </form>
+      </div>
     </div>
-  </div>
+    <a routerLink="/heroes" class="back-button">Volver a la Lista</a>
+  </ng-container>
+  
+  <ng-template #notFound>
+    <div class="not-found-container">
+      <h2>Heroe no encontrado</h2>
+      <p>El heroe que buscas no existe</p>
+      <a routerLink="/heroes" class="back-button">Volver a la Lista</a>
+    </div>
+  </ng-template>
+</div>

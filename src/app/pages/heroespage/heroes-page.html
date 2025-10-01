@@ -1,28 +1,50 @@
-  <button class="add-hero-btn" (click)="showAddHero = true">Añadir héroe</button>
+<div class="heroes-page-container">
+  <div class="heroes-header">
+    <h1>Gestion de Heroes</h1>
+    <button class="add-hero-btn" (click)="showAddHero = true">
+      Añadir Nuevo Heroe
+    </button>
+  </div>
 
-<div class="top-heroes-container">
-  <ul class="all-heroes-list">
-    <li *ngFor="let hero of allHeroes">
-      <span class="hero-id">{{ hero.id }}</span>
-      <a class="all-hero-btn" [routerLink]="['/hero', hero.id]">{{ hero.name }}</a>
-      <button class="delete-btn" (click)="deleteHero(hero.id)">X</button>
-    </li>
-  </ul>
-</div>
+  <div class="top-heroes-container">
+    <ul class="all-heroes-list">
+      <li *ngFor="let hero of allHeroes">
+        <span class="hero-id">{{ hero.id }}</span>
+        <a class="all-hero-btn" [routerLink]="['/hero', hero.id]">{{ hero.name }}</a>
+        <button class="delete-btn" (click)="deleteHero(hero.id)" title="Eliminar heroe">×</button>
+      </li>
+    </ul>
+  </div>
+
   <div class="modal-backdrop" *ngIf="showAddHero">
     <div class="modal">
-      <h3>Nuevo Héroe</h3>
+      <h3>Crear Nuevo Heroe</h3>
       <form (ngSubmit)="submitAddHero()" #heroForm="ngForm">
-        <label>Nombre:
-          <input name="name" [(ngModel)]="name" required />
+        <label>
+          Nombre del Heroe:
+          <input 
+            name="name" 
+            [(ngModel)]="newHeroName" 
+            required 
+            placeholder="Ej: Spider-Man"
+            autocomplete="off"
+          />
         </label>
-        <label>Poder:
-          <input name="power" [(ngModel)]="power" required />
+        <label>
+          Superpoder:
+          <input 
+            name="power" 
+            [(ngModel)]="newHeroPower" 
+            required 
+            placeholder="Ej: Telarañas y agilidad"
+            autocomplete="off"
+          />
         </label>
         <div class="modal-actions">
-          <button type="submit" [disabled]="!name || !power">Añadir</button>
           <button type="button" (click)="closeAddHero()">Cancelar</button>
+          <button type="submit" [disabled]="!newHeroName || !newHeroPower">Crear Heroe</button>
         </div>
       </form>
     </div>
   </div>
+</div>

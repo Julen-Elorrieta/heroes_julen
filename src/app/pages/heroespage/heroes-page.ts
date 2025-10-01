@@ -12,11 +12,11 @@ import { allHeroes } from '../../hero/hero';
   styleUrl: './heroes-page.css'
 })
 export class HeroesPage {
-  allHeroes = allHeroes;
+  allHeroes = [...allHeroes];
 
   showAddHero = false;
-  name = '';
-  power = '';
+  newHeroName = '';
+  newHeroPower = '';
 
   deleteHero(heroId: number) {
     this.allHeroes = this.allHeroes.filter(h => h.id !== heroId);
@@ -24,14 +24,14 @@ export class HeroesPage {
 
   submitAddHero() {
     const newId = this.allHeroes.length ? Math.max(...this.allHeroes.map(h => h.id)) + 1 : 1;
-    const newHero = { id: newId, name: this.name, power: this.power };
-    this.allHeroes.push(newHero);
+    const newHero = { id: newId, name: this.newHeroName, power: this.newHeroPower };
+    this.allHeroes = [...this.allHeroes, newHero];
     this.closeAddHero();
   }
 
   closeAddHero() {
     this.showAddHero = false;
-    this.name = '';
-    this.power = '';
+    this.newHeroName = '';
+    this.newHeroPower = '';
   }
 }
