@@ -1,6 +1,7 @@
 <div class="hero-detail-container">
   <ng-container *ngIf="hero; else notFound">
-    <div class="hero-card">
+    <!-- Vista normal (no editando) -->
+    <div class="hero-card" *ngIf="!isEditing">
       <div class="hero-id-badge">Heroe #{{ hero.id }}</div>
       <h2>{{ hero.name }}</h2>
       <div class="hero-info">
@@ -9,7 +10,50 @@
           {{ hero.power }}
         </div>
       </div>
+      <div class="hero-actions">
+        <button class="edit-button" (click)="startEdit()">Editatu</button>
+      </div>
     </div>
+
+    <!-- Vista de edición -->
+    <div class="hero-edit-form" *ngIf="isEditing">
+      <div class="hero-id-badge">Heroe #{{ hero.id }} - Editatzen</div>
+      <form (ngSubmit)="saveEdit()" #editForm="ngForm">
+        <label>
+          Izena:
+          <input
+            name="editName"
+            [(ngModel)]="editName"
+            required
+            placeholder="Heroearen izena"
+            autocomplete="off"
+          />
+        </label>
+        <label>
+          Superboterea:
+          <input
+            name="editPower"
+            [(ngModel)]="editPower"
+            required
+            placeholder="Heroearen boterea"
+            autocomplete="off"
+          />
+        </label>
+        <div class="edit-actions">
+          <button type="button" (click)="cancelEdit()" class="cancel-button">
+            Ezeztatu
+          </button>
+          <button
+            type="submit"
+            [disabled]="!editName || !editPower"
+            class="save-button"
+          >
+            Gorde
+          </button>
+        </div>
+      </form>
+    </div>
+
     <a routerLink="/heroes" class="back-button">Zerrendara Bueltatu</a>
   </ng-container>
 
