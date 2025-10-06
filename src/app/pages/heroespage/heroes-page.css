@@ -239,22 +239,6 @@
   color: var(--color-text-light);
 }
 
-@media (max-width: 768px) {
-  .heroes-page-container {
-    padding: 1rem;
-    margin-top: 1rem;
-  }
-
-  .modal {
-    min-width: 320px;
-    padding: 1.5rem;
-  }
-
-  .all-heroes-list {
-    max-width: 100%;
-  }
-}
-
 .all-hero-btn {
   flex: 1;
   background: #455a64;

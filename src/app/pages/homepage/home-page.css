@@ -103,24 +103,3 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(69, 90, 100, 0.4);
 }
-
-@media (max-width: 768px) {
-  .home-page-container {
-    padding: 1rem;
-    margin-top: 1rem;
-  }
-
-  .home-welcome h1 {
-    font-size: 2rem;
-  }
-
-  .top-heroes-list {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-
-  .top-hero-btn {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-  }
-}

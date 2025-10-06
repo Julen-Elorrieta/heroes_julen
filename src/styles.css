@@ -122,28 +122,3 @@ router-outlet + * {
   min-height: calc(100vh - 2rem);
   padding: 1rem;
 }
-
-/* Utility Classes - Only used ones kept */
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  :root {
-    --shadow-sm: 0 1px 4px rgba(38, 50, 56, 0.1);
-    --shadow-md: 0 2px 12px rgba(38, 50, 56, 0.15);
-    --shadow-lg: 0 4px 24px rgba(38, 50, 56, 0.2);
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  router-outlet + * {
-    padding: 0.5rem;
-  }
-}

@@ -1,8 +1,8 @@
 <div class="heroes-page-container">
   <div class="heroes-header">
-    <h1>Gestion de Heroes</h1>
+    <h1>Heroes Kudeaketa</h1>
     <button class="add-hero-btn" (click)="showAddHero = true">
-      Añadir Nuevo Heroe
+      Heroe Berria Gehitu
     </button>
   </div>
 
@@ -26,10 +26,10 @@
 
   <div class="modal-backdrop" *ngIf="showAddHero">
     <div class="modal">
-      <h3>Crear Nuevo Heroe</h3>
+      <h3>Heroe Berria Sortu</h3>
       <form (ngSubmit)="submitAddHero()" #heroForm="ngForm">
         <label>
-          Nombre del Heroe:
+          Heroearen Izena:
           <input
             name="name"
             [(ngModel)]="newHeroName"
@@ -39,7 +39,7 @@
           />
         </label>
         <label>
-          Superpoder:
+          Superboterea:
           <input
             name="power"
             [(ngModel)]="newHeroPower"
@@ -49,9 +49,9 @@
           />
         </label>
         <div class="modal-actions">
-          <button type="button" (click)="closeAddHero()">Cancelar</button>
+          <button type="button" (click)="closeAddHero()">Itxi</button>
           <button type="submit" [disabled]="!newHeroName || !newHeroPower">
-            Crear Heroe
+            Heroe Sortu
           </button>
         </div>
       </form>
