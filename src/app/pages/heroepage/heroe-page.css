@@ -1,4 +1,3 @@
-/* HeroePage Styles - Página de detalle del héroe */
 .hero-detail-container {
   max-width: 800px;
   margin: 0 auto;
@@ -102,7 +101,6 @@
   box-shadow: 0 4px 12px rgba(38, 50, 56, 0.3);
 }
 
-/* Estilos para la funcionalidad de edición */
 .hero-actions {
   margin-top: 2rem;
   position: relative;
@@ -219,17 +217,4 @@
   background: rgba(255, 255, 255, 0.2);
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-/* Animaciones */
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
 }

@@ -38,13 +38,11 @@ export class HeroePage {
 
   saveEdit() {
     if (this.hero && this.editName.trim() && this.editPower.trim()) {
-      // Encontrar el héroe en el array y actualizarlo
       const heroIndex = allHeroes.findIndex((h) => h.id === this.hero!.id);
       if (heroIndex !== -1) {
         allHeroes[heroIndex].name = this.editName.trim();
         allHeroes[heroIndex].power = this.editPower.trim();
 
-        // Actualizar la referencia local
         this.hero = { ...allHeroes[heroIndex] };
       }
 

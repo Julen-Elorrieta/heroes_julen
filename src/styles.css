@@ -1,4 +1,3 @@
-/* Heroes App - Global Styles & Variables */
 :root {
   --color-primary: #263238;
   --color-secondary: #455a64;
@@ -37,7 +36,6 @@ body {
   min-height: 100vh;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -67,7 +65,6 @@ p {
   line-height: 1.6;
 }
 
-/* Links */
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -78,7 +75,6 @@ a:hover {
   color: var(--color-accent);
 }
 
-/* Form Elements */
 button {
   font-family: var(--font-main);
   font-size: 1rem;
@@ -116,7 +112,6 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(69, 90, 100, 0.1);
 }
 
-/* Router Outlet Wrapper */
 router-outlet + * {
   display: block;
   min-height: calc(100vh - 2rem);
