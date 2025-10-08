@@ -1,8 +1,25 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { allHeroes } from '../../hero/hero';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  OnInit,
+  OnDestroy,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+import {
+  CommonModule,
+  isPlatformBrowser
+} from '@angular/common';
+import {
+  RouterModule
+} from '@angular/router';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  allHeroes
+} from '../../hero/hero';
 
 @Component({
   selector: 'app-heroes-page',
@@ -70,7 +87,9 @@ export class HeroesPage implements OnInit, OnDestroy {
     this.newHeroPower = '';
   }
 
-  trackById(_index: number, hero: { id: number }) {
+  trackById(_index: number, hero: {
+    id: number
+  }) {
     return hero.id;
   }
 }

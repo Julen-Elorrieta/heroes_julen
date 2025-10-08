@@ -43,11 +43,9 @@
 }
 
 .hero-id {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary),
+      var(--color-secondary));
   color: var(--color-text-light);
   width: 50px;
   height: 60px;
@@ -240,6 +238,7 @@
   background: #ff5252;
   color: #fff;
 }
+
 .delete-btn:active {
   background: #ff1744;
 }
@@ -256,6 +255,7 @@
   transition: background 0.2s;
   margin-top: 16px;
 }
+
 .add-hero-btn:hover {
   background: #388e3c;
 }

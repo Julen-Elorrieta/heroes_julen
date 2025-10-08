@@ -1,8 +1,19 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
-import { Hero } from '../../hero/hero';
-import { allHeroes } from '../../hero/hero';
+import {
+  Component
+} from '@angular/core';
+import {
+  CommonModule
+} from '@angular/common';
+import {
+  Router,
+  RouterModule
+} from '@angular/router';
+import {
+  Hero
+} from '../../hero/hero';
+import {
+  allHeroes
+} from '../../hero/hero';
 
 @Component({
   selector: 'app-home-page',

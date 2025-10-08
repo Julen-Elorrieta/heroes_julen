@@ -53,9 +53,11 @@ h6 {
 h1 {
   font-size: 2.5rem;
 }
+
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.75rem;
 }
@@ -112,7 +114,7 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(69, 90, 100, 0.1);
 }
 
-router-outlet + * {
+router-outlet+* {
   display: block;
   min-height: calc(100vh - 2rem);
   padding: 1rem;
@@ -143,7 +145,7 @@ router-outlet + * {
 }
 
 .btn:focus {
-  outline: 2px solid rgba(69,90,100,0.12);
+  outline: 2px solid rgba(69, 90, 100, 0.12);
   outline-offset: 2px;
 }
 
@@ -151,26 +153,41 @@ router-outlet + * {
   background: var(--color-primary);
   color: var(--color-text-light);
 }
-.btn-primary:hover { background: var(--color-secondary); transform: translateY(-2px); }
+
+.btn-primary:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
 
 .btn-accent {
   background: var(--color-accent);
   color: var(--color-text-light);
 }
-.btn-accent:hover { background: #ff6b6b; transform: translateY(-2px); }
+
+.btn-accent:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+}
 
 .btn-ghost {
   background: transparent;
   color: var(--color-text);
   border: 2px solid var(--color-border);
 }
-.btn-ghost:hover { background: var(--color-muted); }
+
+.btn-ghost:hover {
+  background: var(--color-muted);
+}
 
 .btn-danger {
   background: #ff5252;
   color: #fff;
 }
-.btn-danger:hover { background: #ff1744; transform: scale(1.03); }
+
+.btn-danger:hover {
+  background: #ff1744;
+  transform: scale(1.03);
+}
 
 .btn-icon {
   padding: 0.5rem;

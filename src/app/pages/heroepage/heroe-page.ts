@@ -1,8 +1,24 @@
-import { Component, ChangeDetectionStrategy, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterModule, ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { Hero, allHeroes } from '../../hero/hero';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+import {
+  CommonModule,
+  isPlatformBrowser
+} from '@angular/common';
+import {
+  RouterModule,
+  ActivatedRoute
+} from '@angular/router';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  Hero,
+  allHeroes
+} from '../../hero/hero';
 
 @Component({
   selector: 'app-heroe-page',
@@ -43,7 +59,9 @@ export class HeroePage {
         allHeroes[heroIndex].name = this.editName.trim();
         allHeroes[heroIndex].power = this.editPower.trim();
 
-        this.hero = { ...allHeroes[heroIndex] };
+        this.hero = {
+          ...allHeroes[heroIndex]
+        };
       }
 
       this.isEditing = false;

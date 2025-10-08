@@ -19,33 +19,17 @@
       <form (ngSubmit)="saveEdit()" #editForm="ngForm">
         <label>
           Izena:
-          <input
-            name="editName"
-            [(ngModel)]="editName"
-            required
-            placeholder="Heroearen izena"
-            autocomplete="off"
-          />
+          <input name="editName" [(ngModel)]="editName" required placeholder="Heroearen izena" autocomplete="off" />
         </label>
         <label>
           Superboterea:
-          <input
-            name="editPower"
-            [(ngModel)]="editPower"
-            required
-            placeholder="Heroearen boterea"
-            autocomplete="off"
-          />
+          <input name="editPower" [(ngModel)]="editPower" required placeholder="Heroearen boterea" autocomplete="off" />
         </label>
         <div class="edit-actions">
           <button type="button" (click)="cancelEdit()" class="cancel-button btn btn-ghost">
             Ezeztatu
           </button>
-          <button
-            type="submit"
-            [disabled]="!editName || !editPower"
-            class="save-button btn btn-accent"
-          >
+          <button type="submit" [disabled]="!editName || !editPower" class="save-button btn btn-accent">
             Gorde
           </button>
         </div>
