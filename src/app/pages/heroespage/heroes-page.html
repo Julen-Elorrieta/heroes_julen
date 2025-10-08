@@ -1,20 +1,20 @@
-<div class="heroes-page-container">
+<div class="heroes-page-container page-container">
   <div class="heroes-header">
     <h1>Heroes Kudeaketa</h1>
-    <button class="add-hero-btn" (click)="showAddHero = true">
+    <button class="add-hero-btn btn btn-accent" (click)="showAddHero = true">
       Heroe Berria Gehitu
     </button>
   </div>
 
   <div class="top-heroes-container">
     <ul class="all-heroes-list">
-      <li *ngFor="let hero of allHeroes">
+  <li *ngFor="let hero of allHeroes; trackBy: trackById">
         <span class="hero-id">{{ hero.id }}</span>
         <a class="all-hero-btn" [routerLink]="['/hero', hero.id]"
           >{{ hero.name }}</a
         >
         <button
-          class="delete-btn"
+          class="delete-btn btn btn-icon btn-danger"
           (click)="deleteHero(hero.id)"
           title="Eliminar heroe"
         >

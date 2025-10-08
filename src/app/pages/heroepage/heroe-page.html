@@ -1,4 +1,4 @@
-<div class="hero-detail-container">
+<div class="hero-detail-container page-container">
   <ng-container *ngIf="hero; else notFound">
     <div class="hero-card" *ngIf="!isEditing">
       <div class="hero-id-badge">Heroe #{{ hero.id }}</div>
@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="hero-actions">
-        <button class="edit-button" (click)="startEdit()">Editatu</button>
+        <button class="edit-button btn btn-accent" (click)="startEdit()">Editatu</button>
       </div>
     </div>
 
@@ -38,13 +38,13 @@
           />
         </label>
         <div class="edit-actions">
-          <button type="button" (click)="cancelEdit()" class="cancel-button">
+          <button type="button" (click)="cancelEdit()" class="cancel-button btn btn-ghost">
             Ezeztatu
           </button>
           <button
             type="submit"
             [disabled]="!editName || !editPower"
-            class="save-button"
+            class="save-button btn btn-accent"
           >
             Gorde
           </button>

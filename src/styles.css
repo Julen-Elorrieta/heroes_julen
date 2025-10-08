@@ -117,3 +117,66 @@ router-outlet + * {
   min-height: calc(100vh - 2rem);
   padding: 1rem;
 }
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(38, 50, 56, 0.1);
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 2px solid rgba(69,90,100,0.12);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+.btn-primary:hover { background: var(--color-secondary); transform: translateY(-2px); }
+
+.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-text-light);
+}
+.btn-accent:hover { background: #ff6b6b; transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+.btn-ghost:hover { background: var(--color-muted); }
+
+.btn-danger {
+  background: #ff5252;
+  color: #fff;
+}
+.btn-danger:hover { background: #ff1744; transform: scale(1.03); }
+
+.btn-icon {
+  padding: 0.5rem;
+  width: 48px;
+  height: 48px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 6px;
+}

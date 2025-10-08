@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Hero, allHeroes } from '../../hero/hero';
@@ -8,6 +8,7 @@ import { Hero, allHeroes } from '../../hero/hero';
   selector: 'app-heroe-page',
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './heroe-page.html',
   styleUrl: './heroe-page.css',
 })
@@ -16,8 +17,7 @@ export class HeroePage {
   isEditing = false;
   editName = '';
   editPower = '';
-
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: Object) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.hero = allHeroes.find((h) => h.id === id);
   }
@@ -49,6 +49,9 @@ export class HeroePage {
       this.isEditing = false;
       this.editName = '';
       this.editPower = '';
+      if (isPlatformBrowser(this.platformId)) {
+        window.dispatchEvent(new Event('heroes-updated'));
+      }
     }
   }
 }
